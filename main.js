@@ -17,12 +17,16 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //   console.log(companies[i]);
 // }
 
+// ================
 // forEach - loops over an array, doesn't return anything
+// ================
 companies.forEach(function(company) {
   console.log(company);
 });
 
+// ================
 // filter - returns a new array of all the elements that pass the provided test
+// ================
 
 // const canDrink = ages.filter(function(age) {
 //   if (age > 18) {
@@ -47,3 +51,18 @@ const lastedTenYears = companies.filter(
   company => company.end - company.start >= 10
 );
 console.log(lastedTenYears);
+
+// ================
+// map - creates a new array with the results of calling a provided function on every element in the calling array
+// ================
+
+const companyNames = companies.map(company => company.name);
+console.log(companyNames);
+
+const companyPeriods = companies.map(
+  company => `${company.name}: [${company.start} - ${company.end}]`
+);
+console.log(companyPeriods);
+
+const agesMapped = ages.map(age => Math.sqrt(age)).map(age => age * 2);
+console.log(agesMapped);
